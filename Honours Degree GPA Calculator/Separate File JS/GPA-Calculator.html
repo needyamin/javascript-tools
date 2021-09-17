@@ -1,0 +1,44 @@
+<style> input,select{width:40%;padding:5px;margin-top:4px;} </style>
+<center> 
+<!-- Display Input Start -->	
+<div id="newinput">
+Subject 1: <input type="number"  class='input' value="0" onchange='updateTotal();'> <br>
+Subject 2: <input type="number"  class='input' value="0" onchange='updateTotal();'> <br>
+Subject 3: <input type="number"  class='input' value="0" onchange='updateTotal();'> <br>
+Subject 4: <input type="number"  class='input' value="0" onchange='updateTotal();'> <br>
+Subject 5: <input type="number"  class='input' value="0" onchange='updateTotal();'> <br>
+Subject 6: <input type="number"  class='input' value="0" onchange='updateTotal();'> 
+</div>
+<!-- Display Input END -->
+<br>
+<a href="javascript:add_feed()">Add New Subject</a>
+<br>
+<br>
+
+<input type="submit" onclick="updateTotal();" value="Final GPA"> 
+
+
+
+<!-- Template New Add Start -->
+<div id="newdiv" style="display:none">
+Extra Sub: <input type="number"  class='input' value="0" onchange='updateTotal();'> 
+</div>
+<!-- Template New Add End -->
+
+<!-- Print GPA-->
+<span id="GPA"></span> 
+
+
+<hr>
+Total GPA:  <input type="button" id="total" style="width:10%;" disabled> <br>
+Total SUB:  <input type="button" id="count" style="width:10%;" disabled>
+<hr>
+<br>
+
+
+</center>
+
+<!-- Link with JavaScript file -->
+<script src="calculate.js"></script>
+
+
