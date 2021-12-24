@@ -11,3 +11,6 @@ Go to Honours Degree GPA Calculator >> Single File HTML >> GPA-Calculator.html A
 # Four Year Degree CGPA Calculation
 Go to Four Year Degree CGPA Calculator >> Single File HTML >> CGPA.html And copy paste on your website
 > Demo Link Four Year Degree CGPA Calculator : https://needyamin.github.io/javascript-tools-calculator/CGPA.html
+
+# Jomi Mapar Calculator - জমি মাপার ক্যালকুলেটর
+>  Demo Link Jomi Mapar Calculato: https://needyamin.github.io/javascript-tools-calculator/Land-Measurement-Calculator.html
