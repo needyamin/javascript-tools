@@ -119,18 +119,20 @@
      convert();
  }
  
-function CopyToClipboard(containerid) {
+function convert() {
+	selectFrom = document.getElementById('selectFrom');
 	
-	 /* Get the text field */
-  var copyText = document.getElementById(containerid);
+	var fromSdtVal = selectFrom.options[selectFrom.selectedIndex].getAttribute('uval');
+	
+	selectTo = document.getElementById('selectTo');
 
-  /* Select the text field */
-  copyText.select();
+	var toSdtVal = selectTo.options[selectTo.selectedIndex].getAttribute('uval');
+	
+	inputFrom = document.getElementById('inputFrom').value;
 
-  /* Copy the text inside the text field */
-  document.execCommand("Copy");
-
-}
+	var result = inputFrom * fromSdtVal/toSdtVal;
+	
+	document.getElementById('inputTo').value = result;}
 
  </script>
  
