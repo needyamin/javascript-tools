@@ -14,3 +14,6 @@ Go to Four Year Degree CGPA Calculator >> Single File HTML >> CGPA.html And copy
 
 # #4 Jomi Mapar Calculator - জমি মাপার ক্যালকুলেটর
 >  Demo Link Jomi Mapar Calculato: https://needyamin.github.io/javascript-tools-calculator/Land-Measurement-Calculator.html
+
+# #5 NU 4th Year GPA Calculator - Accounting Department
+>  Demo Link NU GPA Calculator: https://needyamin.github.io/javascript-tools-calculator/nu_gpa.html
