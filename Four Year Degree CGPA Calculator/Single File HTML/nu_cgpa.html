@@ -1,0 +1,89 @@
+<style> 
+.input{width:150px;padding:5px;margin-top:4px;}
+td{border:1px solid grey; padding:5px;}
+ </style>
+<center> 
+<table>
+
+<tr>
+<td>
+<input type='number' id="subject1" class='input' placeholder='1st Year GPA'>
+</td>
+<td>1st Year GPA</td>	
+</tr>
+ 
+<tr>
+<td> 
+<input type='number' id="subject2" class='input' placeholder='2nd Year GPA'>
+</td>
+<td>2nd Year GPA</td>
+</tr>
+
+<tr>
+<td>
+<input type='number' id="subject3" class='input' placeholder='3rd Year GPA'>
+</td>
+<td>3rd Year GPA</td>
+</tr>
+ 
+<tr>
+<td> 
+<input type='number' id="subject4" class='input' placeholder='4th Year GPA'>
+</td>
+<td>4th Year GPA</td>
+</tr>
+
+
+</table>
+<!-- Display Input END -->
+<br>
+<input type="submit" onclick="mex();" value="Calculate GPA" class='input'> 
+
+
+<!-- Print GPA-->
+<span id="GPA"></span> 
+
+
+<hr>
+ <span type="button" id="total" style="width:10%;" disabled> </span> <br>
+<span type="button" id="count" style="width:10%;" disabled></span>
+<hr>
+<br>
+
+</center>
+
+
+<!-- JavaScript File-->
+
+<script type="text/javascript">
+
+function mex(){
+
+var subject1 = document.getElementById("subject1").value;
+var subject2 = document.getElementById("subject2").value;
+var subject3 = document.getElementById("subject3").value;
+var subject4 = document.getElementById("subject4").value;
+
+amound = parseFloat(subject1) + parseFloat(subject2) + parseFloat(subject3) + 
+parseFloat(subject4);
+
+//Check if empty
+if(subject1 === '' || subject2 === '' || subject3 === '' || subject4 === ''){
+alert('Please fill up earch year GPA');
+} 
+
+else {
+
+total = 4;
+mark = document.getElementById("GPA").innerHTML = (amound/total).toFixed(2);
+
+document.getElementById("GPA").innerHTML= "<h2> Your CGPA: " + mark + "</h2>";
+document.getElementById("total").innerHTML= "Total GPA: " + amound;  
+document.getElementById("count").innerHTML= "Total Subject: " + total;  
+}
+	
+}
+
+</script>
+
+
