@@ -1,5 +1,9 @@
 # DOWNLOAD ANDROID APP ALL IN ONE
-https://needyamin.github.io/javascript-tools-calculator/EasyGPA.apk
+> Download APK: https://needyamin.github.io/javascript-tools-calculator/EasyGPA.apk
+
+> Demo Video: https://www.youtube.com/watch?v=xzT01fmJyRg
+
+> Source code: https://github.com/needyamin/android_gpa_calculator_national_university_bd
 
 # #1 JavaScript-Tools-Calculator
 JavaScript Tools for GPA, CGPA, Education, Calculator Related Projects
