@@ -25,3 +25,15 @@ Go to Four Year Degree CGPA Calculator >> Single File HTML >> CGPA.html And copy
 
 # #4 NU 4th Year GPA Calculator - Accounting Department
 >  Demo Link NU GPA Calculator: https://needyamin.github.io/javascript-tools-calculator/nu_gpa.html
+
+
+# Honours 4th Year Degree GPA Calculation
+> Honours 1st year GPA Calculator: https://1styearbba.blogspot.com
+
+> Honours 2nd year GPA Calculator: https://2ndyearbba.blogspot.com/
+
+> Honours 3rd year GPA Calculator: https://3rdyearbba.blogspot.com/
+
+> Honours 4th year GPA Calculator: https://4thyearbba.blogspot.com/
+
+> Honours Universal GPA Calculator: https://universalgpa.blogspot.com/
