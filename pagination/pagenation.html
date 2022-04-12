@@ -1,0 +1,40 @@
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="require/style.css">
+</head>
+
+
+
+<script>
+var current_page = 1; 
+var records_per_page = 2; 
+
+//loop your content here (example: while, do, for..)
+var loopMyData = [
+    { print: "<td>sssssss</td><td>sssssss</td><td>sssssss</td><td>sssssss</td>"},
+    { print: "<td>AdName 2</td><td>AdName 2</td><td>AdName 2</td><td>AdName 2</td>"},
+    { print: "<td>AdName 2</td><td>AdName 2</td><td>AdName 2</td><td>AdName 2</td>"},
+    { print: "<td>AdName 2</td><td>AdName 2</td><td>AdName 2</td><td>AdName 2</td>"},
+    { print: "No Data Found"}
+];
+
+</script>
+
+<!-- Search Input Field-->
+<input type="text" id="myInput" onkeyup="search()" placeholder="Search for names.." title="Type in a name">
+
+<!-- Print Table Data-->
+<div id="listingTable"></div>
+
+
+<!-- Paginationa-->
+<div class='pagination'>
+<a href="javascript:prevPage()" id="btn_prev">Prev</a>
+<a href="javascript:nextPage()" id="btn_next">Next</a>
+page: <span id="page"></span>
+</div>
+
+
+
+
+<script src='require/script.js'></script>
