@@ -4,7 +4,6 @@
 </head>
 
 
-
 <script>
 var current_page = 1; 
 var records_per_page = 2; 
@@ -26,21 +25,19 @@ var loopMyData = [
 
 </script>
 
-<!-- Search Input Field-->
+<!-- Search input field-->
 <input type="text" id="myInput" onkeyup="search()" placeholder="Search for names.." title="Type in a name">
 
 <!-- Print Table Data-->
 <div id="listingTable"></div>
 
 
-<!-- Paginationa-->
+<!-- paginationa-->
 <div class='pagination'>
 <a href="javascript:prevPage()" id="btn_prev">Prev</a>
 <a href="javascript:nextPage()" id="btn_next">Next</a>
 page: <span id="page"></span>
 </div>
-
-
 
 
 <script src='require/script.js'></script>
