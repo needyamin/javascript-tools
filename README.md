@@ -11,13 +11,13 @@ JavaScript Tools for GPA, CGPA, Education and Android Apps Calculator Related Pr
 
 
 # #1 Honours Degree GPA Calculation 
-Go to Honours Degree GPA Calculator >> Single File HTML >> GPA-Calculator.html And copy paste on your website
+` Go to Honours Degree GPA Calculator >> Single File HTML >> GPA-Calculator.html And copy paste on your website `
 > Demo Link Honours Degree GPA Calculator : https://needyamin.github.io/javascript-tools-calculator/GPA-Calculator.html
 
 
 
 # #2 Four Year Degree CGPA Calculation
-Go to Four Year Degree CGPA Calculator >> Single File HTML >> CGPA.html And copy paste on your website
+` Go to Four Year Degree CGPA Calculator >> Single File HTML >> CGPA.html And copy paste on your website `
 > Demo Link Four Year Degree CGPA Calculator : https://needyamin.github.io/javascript-tools-calculator/CGPA.html
 
 # #3 Jomi Mapar Calculator - জমি মাপার ক্যালকুলেটর
@@ -37,3 +37,8 @@ Go to Four Year Degree CGPA Calculator >> Single File HTML >> CGPA.html And copy
 > Honours 4th year GPA Calculator: https://4thyearbba.blogspot.com/
 
 > Honours Universal GPA Calculator: https://universalgpa.blogspot.com/
+
+
+# #6 JavaScript Simple Pagination + DataTable
+` Go >> pagination >> pagenation.html and copy paste on your website`
+> https://needyamin.github.io/javascript-tools-calculator/pagination/pagenation.html
