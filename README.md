@@ -45,4 +45,6 @@ JavaScript Tools for GPA, CGPA, Education and Android Apps Calculator Related Pr
 
 # #7 Some Favourite JavaScript Animation
 ` Open animation folder and check it out `
-> Zoom https://needyamin.github.io/javascript-tools-calculator/animation/zoom.html
+> Slow Zoom Animation https://needyamin.github.io/javascript-tools-calculator/animation/zoom.html
+
+> Border Animation Css https://needyamin.github.io/javascript-tools-calculator/animation/%20border-animation-css.html
