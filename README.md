@@ -42,3 +42,7 @@ JavaScript Tools for GPA, CGPA, Education and Android Apps Calculator Related Pr
 # #6 JavaScript Simple Pagination + DataTable
 ` Go >> pagination >> pagenation.html and copy paste on your website`
 > https://needyamin.github.io/javascript-tools-calculator/pagination/pagenation.html
+
+# #7 Some Favourite JavaScript Animation
+` Open animation folder and check it out `
+> Zoom https://needyamin.github.io/javascript-tools-calculator/animation/zoom.html
