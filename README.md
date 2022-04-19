@@ -48,3 +48,5 @@ JavaScript Tools for GPA, CGPA, Education and Android Apps Calculator Related Pr
 > Slow Zoom Animation https://needyamin.github.io/javascript-tools-calculator/animation/zoom.html
 
 > Border Animation Css https://needyamin.github.io/javascript-tools-calculator/animation/%20border-animation-css.html
+
+> Add Input Fields Dynamically https://needyamin.github.io/javascript-tools-calculator/Dynamically/Add_Input_Fields_Dynamically.html
