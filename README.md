@@ -1,3 +1,8 @@
+<div align="center">
+    <img src="needyamin.svg" width="400" height="400" alt="YAMiN">
+</div>
+
+
 # JavaScript-Tools-Calculator
 JavaScript Tools for GPA, CGPA, Education and Android Apps Calculator Related Projects
 
