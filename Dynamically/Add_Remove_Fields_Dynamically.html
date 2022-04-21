@@ -1,0 +1,44 @@
+
+  <style>
+	  input, #rmID{padding:5px;margin-top:4px;text-decoration:none;}
+	  #addmore{text-decoration:none;margin-top:4px;}
+  </style>
+  
+  <div id="MyForms">
+      <input type="text" placeholder='Enter Text' name="fields_name_1" id="fields_name_1" onchange="document.getElementById('addmore').style.display = 'block';" />
+  </div>
+  
+  <div id="addmore"> <a href="javascript:addFileInput();" id="addmore">Add More</a></div>
+
+
+
+<script>
+var fields_number = 2;
+function addFileInput() {
+  
+  var d = document.createElement("div");
+  d.setAttribute("id","att"+fields_number);
+  var text = document.createElement("input");
+  text.setAttribute("type", "text");
+  text.setAttribute("placeholder", "Enter Something Here");
+  text.setAttribute("name", "fields_name_"+fields_number);
+  
+  var link = document.createElement("a");
+  link.setAttribute("href","javascript:removeTextInput(" + fields_number + ");");
+  link.setAttribute("id", "rmID");
+  
+  var linkText = document.createTextNode("Remove");
+  link.appendChild(linkText);
+  d.appendChild(text);
+  d.appendChild(link);
+  document.getElementById("MyForms").appendChild(d);
+  fields_number++;
+};
+
+function removeTextInput(i) {
+  var div = "att"+i;
+  var d = document.getElementById("MyForms");
+  var olddiv = document.getElementById(div);
+  d.removeChild(olddiv);
+};
+</script>
