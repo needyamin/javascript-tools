@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<style> 
+	input,textarea,select{padding:5px; margin-top:5px;width:80%;}
+	button{padding:5px;margin-top:5px;}
+</style>
+
+<form id="main">
+<input type='text' id="author" placeholder="Your Name"> <br>
+<input type='text' id="keywords" placeholder="keyword1, keyword2, keyword3"> <br>
+<input type='text' id="description" placeholder="Website Description"> <br>
+<input type='text' id="canonical" placeholder="Website Url"> <br>
+
+<select id="hreflang"> 
+<option value='en'>English</option>
+<option value='bn'>Bangla</option>
+</select>
+<br>
+</form>
+
+
+<button onclick='hit();'>Generate Meta </button> or <button onclick="resetValues()">Reset Form</button><br><br>
+
+<textarea id='print'> </textarea><br>
+
+<button onclick="coppp()">Copy text</button> <br>
+
+
+</html>
+
+<script>
+	
+function hit(){	
+var author = document.getElementById('author').value;
+var keywords = document.getElementById('keywords').value;
+var description = document.getElementById('description').value;
+var canonical = document.getElementById('canonical').value;
+var hreflang = document.getElementById('hreflang').value;
+
+if (!author+!keywords+!description+!canonical+!hreflang) {
+	alert("Please fill up each field");
+	}
+	
+else{
+document.getElementById('print').innerHTML= 
+"<meta content='"+author+"' name='author'/>\r\n" + 
+"<meta content='" +keywords+"'name='keywords'/>\r\n" + 
+"<meta content='"+description+"' name='description'/>\r\n" + 
+"<meta content='"+canonical+"' name='canonical'/>\r\n" +
+"<link href='"+canonical+"' hreflang='"+hreflang+"' rel='alternate'/>\r\n";
+}
+}	
+	
+	
+function coppp() {
+  var copyText = document.getElementById("print");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+  navigator.clipboard.writeText(copyText.value);
+  alert("Copied the text: " + copyText.value);
+} 	
+	
+	
+function resetValues() {
+  document.getElementById("main").reset();
+}	
+	
+	
+</script>
