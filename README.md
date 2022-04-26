@@ -52,3 +52,8 @@ JavaScript Tools for GPA, CGPA, Education and Android Apps Calculator Related Pr
 > Add Input Fields Dynamically https://needyamin.github.io/javascript-tools-calculator/Dynamically/Add_Input_Fields_Dynamically.html
 
 > Add Remove Fields Dynamically Using JavaScript https://needyamin.github.io/javascript-tools-calculator/Dynamically/Add_Remove_Fields_Dynamically.html
+
+
+# #8 Free Meta Tag Generator Using HTML+JAVASCRIPT
+` Check root dir, file name "Meta_Tag_Generator.html" `
+> https://needyamin.github.io/javascript-tools-calculator/Meta_Tag_Generator.html
