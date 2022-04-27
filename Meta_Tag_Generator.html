@@ -1,54 +1,77 @@
 <!DOCTYPE html>
 <html>
 <style> 
-	input,textarea,select{padding:5px; margin-top:5px;width:80%;}
+	input,textarea,select{padding:5px; margin-top:5px;width:98%;}
 	button{padding:5px;margin-top:5px;}
+	td{text-align:left;}
 </style>
 
+<table width='100%'>
 <form id="main">
-<input type='text' id="author" placeholder="Your Name"> <br>
-<input type='text' id="keywords" placeholder="keyword1, keyword2, keyword3"> <br>
-<input type='text' id="description" placeholder="Website Description"> <br>
-<input type='text' id="canonical" placeholder="Website Url"> <br>
+<tr><td style='width:150px;'>Your Name</td> <td><input type='text' id="author" placeholder="Your Name"> </td></tr>
+<tr><td style='width:150px;'>Website Name</td> <td><input type='text' id="website_name" placeholder="Website Name"> </td></tr>
+<tr><td style='width:150px;'>KeyWords</td> <td><input type='text' id="keywords" placeholder="keyword1, keyword2, keyword3"> </td></tr>
+<tr><td style='width:150px;'>Description</td> <td><textarea placeholder="Website Description" id="description" ></textarea> </td></tr>
+<tr><td style='width:150px;'>Website Url</td> <td><input type='text' id="canonical" placeholder="https://www.site.com"> </td></tr>
 
+<tr><td style='width:150px;'>Website language</td> <td>
 <select id="hreflang"> 
 <option value='en'>English</option>
-<option value='bn'>Bangla</option>
+<option value='en-US'>United State </option>
+<option value='en-GB'>United Kingdom</option>
+<option value='in-IN'>United Kingdom</option>
+<option value='pt-BR'>Brazilian Portuguese</option>
 </select>
-<br>
+</td></tr>
+
+
 </form>
 
+<tr><td></td> <td>
+<button onclick='hit();'>Generate Meta </button> or <button onclick="resetValues()">Reset Form</button>
+<p id="warning" style='color:red;'></p></td></tr>
 
-<button onclick='hit();'>Generate Meta </button> or <button onclick="resetValues()">Reset Form</button><br><br>
+</table>
 
-<textarea id='print'> </textarea><br>
-
-<button onclick="coppp()">Copy text</button> <br>
+<textarea id='print' rows="6"></textarea>
+<button onclick="coppp()">Copy</button> <br>
 
 
 </html>
+
+
 
 <script>
 	
 function hit(){	
 var author = document.getElementById('author').value;
+var website_name = document.getElementById('website_name').value;
 var keywords = document.getElementById('keywords').value;
 var description = document.getElementById('description').value;
 var canonical = document.getElementById('canonical').value;
 var hreflang = document.getElementById('hreflang').value;
 
-if (!author+!keywords+!description+!canonical+!hreflang) {
-	alert("Please fill up each field");
+if (!author+!keywords+!description+!canonical+!hreflang+!website_name) {
+	//alert("Please fill up each field");
+	document.getElementById('warning').innerHTML = 'Please fill up each field';
 	}
 	
 else{
 document.getElementById('print').innerHTML= 
-"<meta content='"+author+"' name='author'/>\r\n" + 
-"<meta content='" +keywords+"'name='keywords'/>\r\n" + 
+"<!--Website Meta Tags --!>"+"\r\n<meta content='"+author+"' name='author'/>\r\n" + 
+"<meta content='" +keywords+"' name='keywords'/>\r\n" + 
 "<meta content='"+description+"' name='description'/>\r\n" + 
 "<meta content='"+canonical+"' name='canonical'/>\r\n" +
-"<link href='"+canonical+"' hreflang='"+hreflang+"' rel='alternate'/>\r\n";
-}
+"<link href='"+canonical+"' hreflang='"+hreflang+"' rel='alternate'/>\r\n \r\n" +
+
+"<!-- Meta Tags Social --!>"+
+"\r\n<meta content='website' property='og:type'/>\r\n" +
+"<meta content='"+canonical+"' property='og:url'/>\r\n" +
+"<meta content='"+canonical+"' property='og:image'/>\r\n" +
+"<meta content='"+description+"' property='og:description'/>\r\n" +
+"<meta content='"+website_name+"' property='og:site_name'/>\r\n";
+
+}s
 }	
 	
 	
@@ -63,6 +86,7 @@ function coppp() {
 	
 function resetValues() {
   document.getElementById("main").reset();
+  document.getElementById('warning').innerHTML = 'Form Reset Done';
 }	
 	
 	
