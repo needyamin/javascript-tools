@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head> 
-<title> Free Meta Tag Generator Using HTML+JAVASCRIPT</title>
-
-<!--Website Meta Tags -->
-<meta content='Md Yamin Hossain' name='author'/>
-<meta content='Free, Meta Tag, Meta Tag Generator, HTML,JAVASCRIPT' name='keywords'/>
-<meta content='Free Meta Tag Generator Using HTML+JAVASCRIPT' name='description'/>
-<meta content='https://needyamin.github.io/javascript-tools-calculator/' name='canonical'/>
-<link href='https://needyamin.github.io/javascript-tools-calculator/' hreflang='en' rel='alternate'/>
+   <title> Free Meta Tag Generator Using HTML+JAVASCRIPT</title>
+	
+   <!--Website Meta Tags -->
+   <meta content='Md Yamin Hossain' name='author'/>
+   <meta content='Free, Meta Tag, Meta Tag Generator, HTML,JAVASCRIPT' name='keywords'/>
+   <meta content='Free Meta Tag Generator Using HTML+JAVASCRIPT' name='description'/>
+   <meta content='https://needyamin.github.io/javascript-tools-calculator/' name='canonical'/>
+   <link href='https://needyamin.github.io/javascript-tools-calculator/' hreflang='en' rel='alternate'/>
  
-<!-- Meta Tags Social -->
-<meta content='website' property='og:type'/>
-<meta content='https://needyamin.github.io/javascript-tools-calculator/' property='og:url'/>
-<meta content='https://needyamin.github.io/javascript-tools-calculator/' property='og:image'/>
-<meta content='Free Meta Tag Generator Using HTML+JAVASCRIPT' property='og:description'/>
-<meta content='Free Meta Tag Generator Using HTML+JAVASCRIPT' property='og:site_name'/>
-
-</head>	
+   <!-- Meta Tags Social -->
+   <meta content='website' property='og:type'/>
+   <meta content='https://needyamin.github.io/javascript-tools-calculator/' property='og:url'/>
+   <meta content='https://needyamin.github.io/javascript-tools-calculator/' property='og:image'/>
+   <meta content='Free Meta Tag Generator Using HTML+JAVASCRIPT' property='og:description'/>
+   <meta content='Free Meta Tag Generator Using HTML+JAVASCRIPT' property='og:site_name'/>
+ </head>	
 	
 <style> 
-	input,textarea,select{padding:5px; margin-top:5px;width:98%;}
-	button{padding:5px;margin-top:5px;}
-	td{text-align:left;}
-</style>
+   input,textarea,select{padding:5px; margin-top:5px;width:98%;}
+   button{padding:5px;margin-top:5px;}
+   td{text-align:left;}
+ </style>
 
 <table width='100%'>
 <form id="main">
@@ -34,15 +33,14 @@
 <tr><td style='width:150px;'>Website Url</td> <td><input type='text' id="canonical" placeholder="https://www.site.com"> </td></tr>
 
 <tr><td style='width:150px;'>Website language</td> <td>
-<select id="hreflang"> 
-<option value='en'>English</option>
-<option value='en-US'>United State </option>
-<option value='en-GB'>United Kingdom</option>
-<option value='in-IN'>United Kingdom</option>
-<option value='pt-BR'>Brazilian Portuguese</option>
-</select>
-</td></tr>
-
+   <select id="hreflang"> 
+      <option value='en'>English</option>
+      <option value='en-US'>United State </option>
+      <option value='en-GB'>United Kingdom</option>
+      <option value='in-IN'>United Kingdom</option>
+      <option value='pt-BR'>Brazilian Portuguese</option>
+     </select>
+         </td></tr>
 
 </form>
 
@@ -50,18 +48,16 @@
 <button onclick='hit();'>Generate Meta </button> or <button onclick="resetValues()">Reset Form</button>
 <p id="warning" style='color:red;'></p></td></tr>
 
+	
 </table>
 
 <textarea id='print' rows="6"></textarea>
 <button onclick="coppp()">Copy</button> <br>
 
-
 </html>
 
 
-
 <script>
-	
 function hit(){	
 var author = document.getElementById('author').value;
 var website_name = document.getElementById('website_name').value;
@@ -90,9 +86,8 @@ document.getElementById('print').innerHTML=
 "<meta content='"+description+"' property='og:description'/>\r\n" +
 "<meta content='"+website_name+"' property='og:site_name'/>\r\n";
 
-}s
+}
 }	
-	
 	
 function coppp() {
   var copyText = document.getElementById("print");
@@ -101,7 +96,6 @@ function coppp() {
   navigator.clipboard.writeText(copyText.value);
   alert("Copied the text: " + copyText.value);
 } 	
-	
 	
 function resetValues() {
   document.getElementById("main").reset();
