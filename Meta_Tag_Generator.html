@@ -1,5 +1,24 @@
 <!DOCTYPE html>
 <html>
+<head> 
+<title> Free Meta Tag Generator Using HTML+JAVASCRIPT</title>
+
+<!--Website Meta Tags -->
+<meta content='Md Yamin Hossain' name='author'/>
+<meta content='Free, Meta Tag, Meta Tag Generator, HTML,JAVASCRIPT' name='keywords'/>
+<meta content='Free Meta Tag Generator Using HTML+JAVASCRIPT' name='description'/>
+<meta content='https://needyamin.github.io/javascript-tools-calculator/' name='canonical'/>
+<link href='https://needyamin.github.io/javascript-tools-calculator/' hreflang='en' rel='alternate'/>
+ 
+<!-- Meta Tags Social -->
+<meta content='website' property='og:type'/>
+<meta content='https://needyamin.github.io/javascript-tools-calculator/' property='og:url'/>
+<meta content='https://needyamin.github.io/javascript-tools-calculator/' property='og:image'/>
+<meta content='Free Meta Tag Generator Using HTML+JAVASCRIPT' property='og:description'/>
+<meta content='Free Meta Tag Generator Using HTML+JAVASCRIPT' property='og:site_name'/>
+
+</head>	
+	
 <style> 
 	input,textarea,select{padding:5px; margin-top:5px;width:98%;}
 	button{padding:5px;margin-top:5px;}
@@ -58,13 +77,13 @@ if (!author+!keywords+!description+!canonical+!hreflang+!website_name) {
 	
 else{
 document.getElementById('print').innerHTML= 
-"<!--Website Meta Tags --!>"+"\r\n<meta content='"+author+"' name='author'/>\r\n" + 
+"<!--Website Meta Tags -->"+"\r\n<meta content='"+author+"' name='author'/>\r\n" + 
 "<meta content='" +keywords+"' name='keywords'/>\r\n" + 
 "<meta content='"+description+"' name='description'/>\r\n" + 
 "<meta content='"+canonical+"' name='canonical'/>\r\n" +
 "<link href='"+canonical+"' hreflang='"+hreflang+"' rel='alternate'/>\r\n \r\n" +
 
-"<!-- Meta Tags Social --!>"+
+"<!-- Meta Tags Social -->"+
 "\r\n<meta content='website' property='og:type'/>\r\n" +
 "<meta content='"+canonical+"' property='og:url'/>\r\n" +
 "<meta content='"+canonical+"' property='og:image'/>\r\n" +
