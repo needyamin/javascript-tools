@@ -11,7 +11,7 @@ JavaScript Tools for GPA, CGPA, Education and Android Apps Calculator Related Pr
 
 
 # #1 Honours Degree GPA Calculation 
-` Go to Honours Degree GPA Calculator >> Single File HTML >> GPA-Calculator.html And copy paste on your website `
+` Go to Honours Degree GPA Calculator >> Single File HTML >> GPA-Calculator.html And copy paste on your website. `
 > Demo Link Honours Degree GPA Calculator : https://needyamin.github.io/javascript-tools-calculator/GPA-Calculator.html
 
 
