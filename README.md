@@ -56,4 +56,4 @@ JavaScript Tools for GPA, CGPA, Education and Android Apps Calculator Related Pr
 
 # #8 Free Meta Tag Generator Using HTML+JAVASCRIPT
 ` Check root dir, file name "Meta_Tag_Generator.html" `
-> https://needyamin.github.io/javascript-tools-calculator/Meta_Tag_Generator.html
+> https://needyamin.github.io/javascript-tools-calculator/%20Free%20Meta%20Tag%20Generator/Meta_Tag_Generator.html
