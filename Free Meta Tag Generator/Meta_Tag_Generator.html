@@ -30,7 +30,8 @@
 <tr><td style='width:150px;'>Website Name</td> <td><input type='text' id="website_name" placeholder="Website Name"> </td></tr>
 <tr><td style='width:150px;'>KeyWords</td> <td><input type='text' id="keywords" placeholder="keyword1, keyword2, keyword3"> </td></tr>
 <tr><td style='width:150px;'>Description</td> <td><textarea placeholder="Website Description" id="description" ></textarea> </td></tr>
-<tr><td style='width:150px;'>Website Url</td> <td><input type='text' id="canonical" placeholder="https://www.site.com"> </td></tr>
+<tr><td style='width:150px;'>Website Url</td> <td><input type='text' id="canonical" placeholder="https://www.site.com"> </td></tr>	
+<tr><td style='width:150px;padding-left:10px;'>Page Image Url</td> <td><input type='text' id="cov_img" placeholder="https://www.site.com/image.jpg"> </td></tr>
 
 <tr><td style='width:150px;'>Website language</td> <td>
    <select id="hreflang"> 
@@ -65,27 +66,35 @@ var keywords = document.getElementById('keywords').value;
 var description = document.getElementById('description').value;
 var canonical = document.getElementById('canonical').value;
 var hreflang = document.getElementById('hreflang').value;
+var cov_img = document.getElementById('cov_img').value;
 
-if (!author+!keywords+!description+!canonical+!hreflang+!website_name) {
+if (!author+!keywords+!description+!canonical+!hreflang+!website_name+!cov_img) {
 	//alert("Please fill up each field");
 	document.getElementById('warning').innerHTML = 'Please fill up each field';
 	}
 	
 else{
 document.getElementById('print').innerHTML= 
-"<!--Website Meta Tags -->"+"\r\n<meta content='"+author+"' name='author'/>\r\n" + 
+"<!-- Primary Meta Tags -->"+"\r\n<meta content='"+author+"' name='author'/>\r\n" + 
 "<meta content='" +keywords+"' name='keywords'/>\r\n" + 
 "<meta content='"+description+"' name='description'/>\r\n" + 
 "<meta content='"+canonical+"' name='canonical'/>\r\n" +
 "<link href='"+canonical+"' hreflang='"+hreflang+"' rel='alternate'/>\r\n \r\n" +
 
-"<!-- Meta Tags Social -->"+
+"<!-- Open Graph / Facebook -->"+
 "\r\n<meta content='website' property='og:type'/>\r\n" +
 "<meta content='"+canonical+"' property='og:url'/>\r\n" +
-"<meta content='"+canonical+"' property='og:image'/>\r\n" +
+"<meta content='"+cov_img+"' property='og:image'/>\r\n" +
 "<meta content='"+description+"' property='og:description'/>\r\n" +
-"<meta content='"+website_name+"' property='og:site_name'/>\r\n";
+"<meta content='"+website_name+"' property='og:site_name'/>\r\n \r\n" +
 
+
+"<!-- Twitter -->"+
+"\r\n<meta content='summary_large_image' property='twitter:card'/>\r\n" +
+"<meta content='"+canonical+"' property='twitter:url'/>\r\n" +
+"<meta content='"+cov_img+"' property='twitter:image'/>\r\n" +
+"<meta content='"+description+"' property='twitter:description'/>\r\n" +
+"<meta content='"+website_name+"' property='twitter:title'/>\r\n";
 }
 }	
 	
@@ -95,12 +104,16 @@ function coppp() {
   copyText.setSelectionRange(0, 99999); /* For mobile devices */
   navigator.clipboard.writeText(copyText.value);
   alert("Copied the text: " + copyText.value);
-} 	
+} 		
 	
 function resetValues() {
   document.getElementById("main").reset();
   document.getElementById('warning').innerHTML = 'Form Reset Done';
 }	
-	
+  
+function warning(){
+document.getElementById('warning').innerHTML = '';
+}	
+setTimeout(warning, 5000);	
 	
 </script>
