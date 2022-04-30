@@ -1,0 +1,19 @@
+<center id='needyamin_space'>
+<textarea type='text' id='inputdata' placeholder='Type Your Message,Text, Link, Number Etc..' rows="4" cols="50"></textarea><br>
+<button id='gen' onclick="clickx();" style='margin-top:5px;'>Generate</button>
+</center>
+<p id='print'></p>
+
+
+<script>
+function clickx(){
+var me = document.getElementById('inputdata').value;
+var url = "https://chart.googleapis.com/chart?chs=400x400&cht=qr&chl="+ me;
+document.getElementById('print').innerHTML= "<center><img src="+ url +"><br>"+ me + "<br><a href=https://chart.googleapis.com/chart?chs=400x400&cht=qr&chl="+ me + ">Download</a><br><button onclick='resetx();' style='margin-top:8px;'>Generate Again</button><style>#inputdata,#gen,#needyamin_space{display:none;}</style></cente>";
+console.log(url);}
+
+function resetx(){
+	document.getElementById('print').innerHTML='';
+	document.getElementById('inputdata').innerHTML='';
+	}
+</script>
