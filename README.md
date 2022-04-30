@@ -58,6 +58,6 @@ JavaScript Tools for GPA, CGPA, Education and Android Apps Calculator Related Pr
 ` Open Free Meta Tag Generator dir, file name "Meta_Tag_Generator.html" `
 > https://needyamin.github.io/javascript-tools-calculator/Free%20Meta%20Tag%20Generator/Meta_Tag_Generator.html
 
-# #9 QR Code Generator
-' QR Code Generator '
+# #9 QR Code Generator Using JAVASCRIPT
+' QR Code Generator JAVASCRIPT '
 > https://needyamin.github.io/javascript-tools-calculator/Dynamically/qr_test.html
