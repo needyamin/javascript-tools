@@ -14,18 +14,30 @@
 <!-- print source -->
 <p id='print'></p>
 
+
 </div>
 </body>
 </html>
 
 <!-- Javascipt/ QR Codes Infographics -->
 <script>
+	
 // if hit button	
 function clickx(){
+
+// store  input value	
 var me = document.getElementById('inputdata').value;
+
+// if input empty	
+if(!me){
+document.getElementById('print').innerHTML="<p style='color:red;'>Text Box Can't Be Empty!</p>";
+}
+
+else{		
 var url = "https://chart.googleapis.com/chart?chs=400x400&cht=qr&chl="+ me;
 document.getElementById('print').innerHTML= "<center><img src="+ url +"><br>"+ me + "<br><a href=https://chart.googleapis.com/chart?chs=400x400&cht=qr&chl="+ me + ">Download</a><br><button onclick='resetx();' style='margin-top:8px;'>Generate Again</button><style>#inputdata,#gen,#needyamin_space{display:none;}</style></cente>";
-console.log(url);}
+}
+}
 
 // if hit Generate
 function resetx(){
