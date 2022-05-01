@@ -1,19 +1,37 @@
-<center id='needyamin_space'>
+<html>
+<head><title>QR Codes Infographics Using JavaScript</title> </head>
+<body>
+	
+<!-- input form-->
+<div style="text-align:center">
+<form id='needyamin_space'>
 <textarea type='text' id='inputdata' placeholder='Type Your Message,Text, Link, Number Etc..' rows="4" cols="50"></textarea><br>
-<button id='gen' onclick="clickx();" style='margin-top:5px;'>Generate</button>
-</center>
+</form>
+
+<!-- hit button -->
+<button id='gen' onclick="clickx();" style='margin-top:5px;text-align:center;'>Generate</button>
+
+<!-- print source -->
 <p id='print'></p>
 
 
+</div>
+</body>
+</html>
+
+<!-- Javascipt/ QR Codes Infographics -->
 <script>
+	
+// if hit button	
 function clickx(){
 var me = document.getElementById('inputdata').value;
 var url = "https://chart.googleapis.com/chart?chs=400x400&cht=qr&chl="+ me;
 document.getElementById('print').innerHTML= "<center><img src="+ url +"><br>"+ me + "<br><a href=https://chart.googleapis.com/chart?chs=400x400&cht=qr&chl="+ me + ">Download</a><br><button onclick='resetx();' style='margin-top:8px;'>Generate Again</button><style>#inputdata,#gen,#needyamin_space{display:none;}</style></cente>";
 console.log(url);}
 
+// if hit Generate
 function resetx(){
 	document.getElementById('print').innerHTML='';
-	document.getElementById('inputdata').innerHTML='';
+	document.getElementById('needyamin_space').reset(); 
 	}
 </script>
