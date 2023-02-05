@@ -1,6 +1,4 @@
-Key Codes
-
-This document is written by Helge Willum Larsen
+# Key Codes
 It contains a list of all "onkeypress", "onkeydown" and "onkeyup" KeyCodes in JavaScript,
 that can be typed with a DANISH KEYBOARD !!!
 Other keyboards probably have other KeyCodes.
@@ -26,15 +24,15 @@ SUPPORTS MULTIPLE KEYPRESSES:
           [CapsLock] + [A] = [A]
 [Shift] + [CapsLock] + [A] = [a]
 
-ALL KEYS THAT CREATES THE SAME OUTPUT, HAVE THE SAME KEYCODES !
+# ALL KEYS THAT CREATES THE SAME OUTPUT, HAVE THE SAME KEYCODES !
 
-[NumPad 1] is the same as [1] (if NumLock)
-[NumPad +] is the same as [+]
+- [NumPad 1] is the same as [1] (if NumLock)
+
+- [NumPad +] is the same as [+]
 
 DOES NOT SUPPORT ARROW-KEYS, DELETE, INSERT, SHIFT, ALT, CTRL, TAB, ESC...........!
 But it supports [Return / Enter] and [Backspace]
 ____________________________________________________________________________________________
-
 
 Button:			keyCode:
 
@@ -168,12 +166,10 @@ Button:			keyCode:
 
 ____________________________________________________________________________________________
 
-KeyCodes (DANISH keyboard):	onkeydown / onkeyup	Tested with Internet Explore 5.0)
-By: Helge Willum Larsen
+KeyCodes (DANISH keyboard): onkeydown/onkeyup Tested with Internet Explore 5.0)
 ____________________________________________________________________________________________
 
 DOES NOT SUPPORT MULTIPLE KEYPRESSES !
-
 ALL KEYS HAVE THEIR OWN, INDIVIDUAL KEYCODE !
 
 [NumPad 1] is NOT the same as [1]
