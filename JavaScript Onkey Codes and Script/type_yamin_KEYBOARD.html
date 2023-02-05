@@ -1,0 +1,32 @@
+
+<script>
+let stringVal="";
+document.onkeypress = function (e) {
+  e = e || window.event;
+	console.log(e.keyCode);
+  switch(e.keyCode){
+    case 121: // key code for h
+      stringVal+="y";
+      break;
+    case 97: // key code for e
+      stringVal+="a";
+      break;
+    case 109: // key code for l
+      stringVal+="m";
+      break;
+    case 105: // key code for l
+      stringVal+="i";
+      break;
+    case 110: // key code for o
+      stringVal+="n";
+      break;            
+    default:
+      stringVal=""; 
+  }
+  
+  if(stringVal.indexOf("yamin")!=-1)
+        alert('👋🌎');
+		$('#myModal').modal('show');
+}
+</script>
+
