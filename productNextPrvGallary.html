@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Carousel</title>
+  <style>
+    /* CSS styles */
+    .carousel {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .products {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .product {
+      flex: 0 0 25%; /* Each product takes up 25% width */
+      padding: 10px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .product img {
+      width: 100%;
+      height: auto;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    .prev-btn,
+    .next-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      z-index: 1;
+    }
+
+    .prev-btn {
+      left: 0;
+    }
+
+    .next-btn {
+      right: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="carousel">
+    <div class="products">
+      <!-- Products will be dynamically added here -->
+    </div>
+    <button class="prev-btn">❮ Prev</button>
+    <button class="next-btn">Next ❯</button>
+  </div>
+
+  <!-- Include Axios CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <script>
+    // JavaScript code
+    document.addEventListener('DOMContentLoaded', () => {
+      const productsContainer = document.querySelector('.products');
+      const prevBtn = document.querySelector('.prev-btn');
+      const nextBtn = document.querySelector('.next-btn');
+
+      let currentIndex = 0;
+      const productsPerPage = 4;
+
+      // Fetch products (simulated API)
+      axios.get('https://jsonplaceholder.typicode.com/photos?_start=0&_limit=120')
+        .then(response => {
+          const products = response.data.slice(0, 120); // Simulating 12 products from the API
+
+          // Function to display products
+          const displayProducts = () => {
+            productsContainer.innerHTML = '';
+
+            for (let i = currentIndex; i < currentIndex + productsPerPage; i++) {
+              if (products[i]) {
+                const product = products[i];
+                const productElement = document.createElement('div');
+                productElement.classList.add('product');
+
+                const imgElement = document.createElement('img');
+                imgElement.src = product.url;
+                imgElement.alt = product.title;
+
+                productElement.appendChild(imgElement);
+                productsContainer.appendChild(productElement);
+              }
+            }
+          };
+
+          displayProducts();
+
+          // Carousel functionality - Next button
+          nextBtn.addEventListener('click', () => {
+            if (currentIndex < products.length - productsPerPage) {
+              currentIndex++;
+              displayProducts();
+            }
+          });
+
+          // Carousel functionality - Previous button
+          prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+              currentIndex--;
+              displayProducts();
+            }
+          });
+        })
+        .catch(error => {
+          console.error('Error fetching products:', error);
+        });
+    });
+  </script>
+</body>
+</html>
