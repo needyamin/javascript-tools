@@ -61,3 +61,9 @@ JavaScript Tools for GPA, CGPA, Education and Android Apps Calculator Related Pr
 # #9 QR Code Generator Using JAVASCRIPT
 ' QR Code Generator JAVASCRIPT '
 > https://needyamin.github.io/javascript-tools/Dynamically/qr_test.html
+
+
+# #10 Digital FingerPrint
+' Digital FingerPrint JAVASCRIPT '
+> [https://needyamin.github.io/javascript-tools/Dynamically/qr_test.html](https://needyamin.github.io/javascript-tools/fingerPrint.html) 
+
