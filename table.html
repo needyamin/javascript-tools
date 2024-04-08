@@ -1,0 +1,41 @@
+
+<style>
+    .balloon {
+        position: absolute;
+        width: 50px;
+        height: 70px;
+        background-color: red;
+        border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    }
+</style>
+
+<div class="container" id="target_div">
+    <!-- Balloons will be added here dynamically -->
+</div>
+<script>
+    function createBalloon() {
+        const balloon = document.createElement('div');
+        balloon.classList.add('balloon');
+        const randomX = Math.floor(Math.random() * window.innerWidth);
+        balloon.style.left = randomX + 'px';
+        balloon.style.bottom = '-70px'; // Start from bottom of the screen
+        document.getElementById('target_div').appendChild(balloon);
+        
+        // Animation
+        const duration = Math.floor(Math.random() * 10) + 5; // Random duration between 5 to 15 seconds
+        const randomSpeed = Math.floor(Math.random() * 5) + 2; // Random speed between 2 to 7 pixels per frame
+        const interval = setInterval(() => {
+            const bottom = parseInt(balloon.style.bottom);
+            if (bottom >= window.innerHeight) {
+                clearInterval(interval);
+                balloon.remove();
+            } else {
+                balloon.style.bottom = (bottom + randomSpeed) + 'px';
+            }
+        }, 1000 / 30); // 30 frames per second
+    }
+
+    // Create balloons every few seconds
+    setInterval(createBalloon, 2000); // Change interval as needed
+</script>
+
