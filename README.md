@@ -70,3 +70,9 @@ JavaScript Tools for GPA, CGPA, Education and Android Apps Calculator Related Pr
 # #11 Animation_balloons
 ' Animation_balloons '
 > [https://needyamin.github.io/javascript-tools/Animation_balloons.html](https://needyamin.github.io/javascript-tools/Animation_balloons.html)
+
+
+# #12 WYSIWYG Editor JavaScript
+' WYSIWYG Editor JavaScript '
+https://needyamin.github.io/javascript-tools/WYSIWYG_Editor.html
+> 
