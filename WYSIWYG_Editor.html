@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WYSIWYG Editor</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+
+  #editor {
+    border: 1px solid #ccc;
+    padding: 5px;
+    width: 80%;
+    margin: 20px auto;
+    background-color: white;
+  }
+
+  #yamin-toolbar {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+  }
+
+  #yamin-toolbar button, #yamin-toolbar select {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #555;
+    margin-right: 10px;
+  }
+
+  #yamin-toolbar button:hover {
+    color: #333;
+  }
+
+  #yamin-toolbar select {
+    appearance: none;
+    background: transparent;
+    color: #555;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  #yamin-toolbar select option {
+    color: #555;
+  }
+
+  #editor-content {
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    width: calc(100% - 20px);
+    min-height: 200px;
+    outline: none;
+  }
+
+  #editor-textarea {
+    display: none;
+  }
+
+  .spacer {
+    flex-grow: 1;
+  }
+
+  .color-picker {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<div id="editor">
+  <div id="yamin-toolbar">
+    <div class="left-section">
+      <select onchange="formatText('formatBlock', this.value)">
+        <option value="H1">Heading 1</option>
+        <option value="H2">Heading 2</option>
+        <option value="H3">Heading 3</option>
+        <option value="H4">Heading 4</option>
+        <option value="H5">Heading 5</option>
+        <option value="H6">Heading 6</option>
+        <option value="P">Paragraph</option>
+      </select>
+      <select onchange="formatText('fontName', this.value)">
+        <option value="Arial">Arial</option>
+        <option value="Verdana">Verdana</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Courier New">Courier New</option>
+      </select>
+      <button onclick="formatText('fontSize', '1')">A<sub>+</sub></button>
+      <button onclick="formatText('fontSize', '2')">A</button>
+      <button onclick="formatText('fontSize', '3')">A<sup>-</sup></button>
+    </div>
+    <div class="spacer"></div>
+    <div class="right-section">
+      <button onclick="formatText('justifyLeft')"><i class="fas fa-align-left"></i></button>
+      <button onclick="formatText('justifyCenter')"><i class="fas fa-align-center"></i></button>
+      <button onclick="formatText('justifyRight')"><i class="fas fa-align-right"></i></button>
+      <button onclick="formatText('bold')"><i class="fas fa-bold"></i></button>
+      <button onclick="formatText('italic')"><i class="fas fa-italic"></i></button>
+      <button onclick="formatText('underline')"><i class="fas fa-underline"></i></button>
+      <button onclick="formatText('insertUnorderedList')"><i class="fas fa-list-ul"></i></button>
+      <button onclick="formatText('insertOrderedList')"><i class="fas fa-list-ol"></i></button>
+      <button onclick="addLink()"><i class="fas fa-link"></i></button>
+      <button onclick="clearFormatting()"><i class="fas fa-eraser"></i></button>
+      <select onchange="setParagraphParams(this.value)">
+        <option value="">Default</option>
+        <option value="style='margin: 10px 0;'">Margin: 10px 0</option>
+        <option value="style='text-align: center;'">Text align: center</option>
+      </select>
+      <input type="color" class="color-picker" id="text-color-picker" onchange="setTextColor(this.value)">
+      <input type="color" class="color-picker" id="bg-color-picker" onchange="setBgColor(this.value)">
+    </div>
+  </div>
+  <div id="editor-content" contenteditable="true" placeholder="Start typing here..."></div>
+  <textarea id="editor-textarea" name="editor-textarea"></textarea>
+</div>
+<script>
+function formatText(command, value = null) {
+  document.execCommand(command, false, value);
+  document.getElementById('editor-textarea').value = document.getElementById('editor-content').innerHTML;
+}
+
+function addLink() {
+  var url = prompt("Enter the URL:");
+  if (url) {
+    var rel = prompt("Enter the 'rel' attribute value (optional):");
+    var target = prompt("Enter the 'target' attribute value (optional):");
+    document.execCommand('createLink', false, url);
+    var links = document.querySelectorAll('#editor-content a');
+    if (rel) {
+      links[links.length - 1].setAttribute('rel', rel);
+    }
+    if (target) {
+      links[links.length - 1].setAttribute('target', target);
+    }
+  }
+}
+
+function clearFormatting() {
+  document.execCommand('removeFormat');
+  document.execCommand('unlink');
+  document.execCommand('foreColor');
+  document.execCommand('hiliteColor');
+  document.getElementById('editor-textarea').value = document.getElementById('editor-content').innerHTML;
+}
+
+function setParagraphParams(params) {
+  var selectedText = document.getSelection();
+  var parentNode = selectedText.anchorNode.parentNode;
+   if (params) {
+    parentNode.outerHTML = '<p ' + params + '>' + parentNode.innerHTML + '</p>';
+  } else {
+    if (parentNode.nodeName === 'P') {
+      parentNode.outerHTML = parentNode.innerHTML;
+    }
+  }
+}
+
+function setTextColor(color) {
+  document.execCommand('foreColor', false, color);
+}
+
+function setBgColor(color) {
+  document.execCommand('hiliteColor', false, color);
+}
+
+document.getElementById('editor-content').addEventListener('input', function() {
+  // This event listener is to make sure the content inside the editor div reflects the changes made by execCommand
+  // You might need more advanced handling based on your requirements
+  document.getElementById('editor-textarea').value = this.innerHTML;
+});
+</script>
+</body>
+</html>
+
+   
+
