@@ -80,5 +80,5 @@ https://needyamin.github.io/javascript-tools/WYSIWYG_Editor.html
 
 # #14 VUE JS SHOPPING CART WITH CDN
 ' VUE JS SHOPPING CART WITH CDN '
-https://needyamin.github.io/javascript-tools/VUEJS_SHOPPING_CART/VUE_JS_SHOPPING_CART.html
+[https://needyamin.github.io/javascript-tools/VUEJS_SHOPPING_CART/VUE_JS_SHOPPING_CART.html](https://needyamin.github.io/javascript-tools/VUEJS%20SHOPPING%20CART/VUE_JS_SHOPPING_CART.html)
 > 
