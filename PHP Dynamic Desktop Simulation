@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Desktop Simulation</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #2e8b57;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .desktop {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 20px;
+    }
+
+    .folder, .file {
+      width: 100px;
+      text-align: center;
+      margin: 15px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .folder:hover, .file:hover {
+      transform: scale(1.1);
+    }
+
+    .icon {
+      width: 64px;
+      height: 64px;
+    }
+
+    .folder-window {
+      width: 400px;
+      height: 300px;
+      background-color: white;
+      border: 2px solid #333;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      position: absolute;
+      top: 100px;
+      left: 100px;
+      display: none;
+      flex-direction: column;
+    }
+
+    .folder-header {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .folder-content {
+      padding: 10px;
+      flex-grow: 1;
+      overflow-y: auto;
+    }
+
+    .close-btn {
+      background-color: red;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="desktop">
+  <?php
+  // Set the root directory (can be the current directory or another directory)
+  $rootDir = '.';
+
+  // Function to check if the item is a folder
+  function isFolder($item) {
+    return is_dir($item);
+  }
+
+  // Read directory contents
+  $items = scandir($rootDir);
+
+  // Loop through each item in the directory
+  foreach ($items as $item) {
+    // Ignore special directories '.' and '..'
+    if ($item === '.' || $item === '..') {
+      continue;
+    }
+
+    if (isFolder($rootDir . '/' . $item)) {
+      // Display folder
+      echo '<div class="folder" onclick="openWindow(\'' . $item . '-window\')">
+              <img src=\'https://img.icons8.com/plasticine/100/000000/folder-invoices.png\' alt="Folder Icon" class="icon">
+              <p>' . htmlspecialchars($item) . '</p>
+            </div>';
+
+      // Create folder window (hidden by default)
+      echo '<div class="folder-window" id="' . $item . '-window">
+              <div class="folder-header">
+                <span>' . htmlspecialchars($item) . '</span>
+                <button class="close-btn" onclick="closeWindow(\'' . $item . '-window\')">X</button>
+              </div>
+              <div class="folder-content">
+                <p>Contents of ' . htmlspecialchars($item) . ':</p>';
+      
+      // Display contents of the folder
+      $subItems = scandir($rootDir . '/' . $item);
+      foreach ($subItems as $subItem) {
+        if ($subItem === '.' || $subItem === '..') continue;
+        echo '<p>' . htmlspecialchars($subItem) . '</p>';
+      }
+
+      echo '  </div>
+            </div>';
+    } else {
+      // Display file
+      echo '<div class="file">
+              <img src=\'https://img.icons8.com/plasticine/100/000000/document.png\' alt="File Icon" class="icon">
+              <p>' . htmlspecialchars($item) . '</p>
+            </div>';
+    }
+  }
+  ?>
+</div>
+
+<script>
+  // Function to open folder window
+  function openWindow(id) {
+    document.getElementById(id).style.display = 'flex';
+  }
+
+  // Function to close folder window
+  function closeWindow(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
+
